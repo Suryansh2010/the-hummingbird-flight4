@@ -51,9 +51,12 @@ function draw() {
   if (gameState === PLAY){
 
     score = score + Math.round(getFrameRate()/60);
+
+    if(keyDown("space")){
+      bird.velocityY = -10;
+    }
     
     if((touches.length > 0 || keyDown("SPACE")) && trex.y  >= height-120) {
-      jumpSound.play( )
       bird.velocityY = -10;
        touches = [];
     }
